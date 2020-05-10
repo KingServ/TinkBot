@@ -6,6 +6,8 @@
 *.exe
 *.o
 *.so
+*.js*
+!*.json
 
 # Packages #
 ############
@@ -51,3 +53,7 @@ package-lock.json
 # Eslint file #
 ###############
 .eslintrc.json
+
+# Sensitive Stuff #
+###################
+.env
