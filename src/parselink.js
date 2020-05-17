@@ -50,7 +50,7 @@ module.exports = function parseLink(link) {
 		thumbnail = { 'url': 'https://i.imgur.com/RxdEbbQ.png' }; // from https://discordapp.com/branding
 		// TODO: support custom thumbnail for Discord using HTTPS requests (most probably)
 	} else {
-		console.error('ERROR: unrecognized URL type!');
+		console.error('ERREUR: type d'URL non reconnu!');
 	}
 
 	gamename = capitalize(gamename);
