@@ -21,11 +21,11 @@ client
 		console.log(`Current server count: ${client.guilds.size}`);
 		client.user.setPresence({ game: { name: `présent sur ${client.guilds.size} serveurs, such wow` }, status: 'online' });
 	})
-	.on('disconnect', () => { console.warn('Disconnected!'); })
+	.on('disconnect', () => { console.warn('Déconnecter!'); })
 	.on('reconnecting', () => { console.warn('Reconnecting...'); })
 	.on('commandError', (cmd, err) => {
 		if(err instanceof commando.FriendlyError) return;
-		console.error(`Error in command ${cmd.groupID}:${cmd.memberName}`, err);
+		console.error(`Erreur dans la commande ${cmd.groupID}:${cmd.memberName}`, err);
 	})
 	.on('commandBlocked', (msg, reason) => {
 		console.log(oneLine`
@@ -35,29 +35,29 @@ client
 	})
 	.on('commandPrefixChange', (guild, prefix) => {
 		console.log(oneLine`
-			Prefix ${prefix === '' ? 'removed' : `changed to ${prefix || 'the default'}`}
-			${guild ? `in guild ${guild.name} (${guild.id})` : 'globally'}.
+			Prefix ${prefix === '' ? 'removed' : `changé en ${prefix || 'the default'}`}
+			${guild ? `sur le discord ${guild.name} (${guild.id})` : 'globally'}.
 		`);
 	})
 	.on('commandStatusChange', (guild, command, enabled) => {
 		console.log(oneLine`
 			Command ${command.groupID}:${command.memberName}
 			${enabled ? 'enabled' : 'disabled'}
-			${guild ? `in guild ${guild.name} (${guild.id})` : 'globally'}.
+			${guild ? `sur le discord ${guild.name} (${guild.id})` : 'globally'}.
 		`);
 	})
 	.on('groupStatusChange', (guild, group, enabled) => {
 		console.log(oneLine`
 			Group ${group.id}
 			${enabled ? 'enabled' : 'disabled'}
-			${guild ? `in guild ${guild.name} (${guild.id})` : 'globally'}.
+			${guild ? `sur le discord ${guild.name} (${guild.id})` : 'globally'}.
 		`);
 	})
 	.on('guildCreate', (guild) => {
 		console.log(oneLine`
-			Joining new server
+			Rejoindre un nouveau serveur
 			(${guild.name}),
-			refreshing server count...
+			actualisation du nombre de serveurs...
 			(${client.guilds.size})
 		`);
 		client.user.setPresence({
