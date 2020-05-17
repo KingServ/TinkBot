@@ -58,13 +58,13 @@ module.exports = class SendMessage extends Commando.Command {
 							}
 						})
 						.catch(console.error);
-					console.log(`Message successfully sent to "${guild}"`);
+					console.log(`Message envoyé avec succès à "${guild}"`);
 				} catch(err) {
 					msg.channel.send(`\`${err}\` pour le serveur ${guild}`);
 					console.log(err);
 				}
 			} else {
-				console.log(`Guild "${guild}" is unavailable`);
+				console.log(`Discord "${guild}" est indisponible`);
 			}
 		});
 		return msg.channel.send('Message envoyé à tous les serveurs !');
