@@ -32,13 +32,13 @@ module.exports = class SendAnnouncement extends commando.Command {
 				const chan = this.client.channels.get(this.client.provider.get(guild, 'freeChannel', guild.systemChannelID));
 				try {
 					chan.send(mes);
-					console.log(`Message successfully sent to "${guild}"`);
+					console.log(`Message envoyé avec succès à "${guild}"`);
 				} catch(e) {
 					msg.channel.send(`\`${e}\` pour le serveur ${guild}`);
 					console.log(e);
 				}
 			} else {
-				console.log(`Guild "${guild}" is unavailable`);
+				console.log(`Discord "${guild}" est indisponible`);
 			}
 		});
 		return msg.channel.send('Message envoyé à tous les serveurs !');
